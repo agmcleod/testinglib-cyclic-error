@@ -1,14 +1,10 @@
 import { render, screen } from '@testing-library/react'
 
 function Wrapper(props) {
-  return props.children
+  return <p>{props.children}</p>
 }
 
 test('renders a paragraph', () => {
-  render(
-    <Wrapper>
-      <p>Hello</p>
-    </Wrapper>
-  )
-  expect(screen.getByText('Hello')).toBeInTheDocument()
+  render(<Wrapper>Hello</Wrapper>)
+  expect(screen.getAllByText('Hello')).toEqual([])
 })
