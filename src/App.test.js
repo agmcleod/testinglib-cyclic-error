@@ -10,5 +10,5 @@ test('renders a paragraph', () => {
       <p>Hello</p>
     </Wrapper>
   )
-  expect(screen.getAllByText('Hello')).toEqual([])
+  expect(screen.getByText('Hello')).toBeInTheDocument()
 })
